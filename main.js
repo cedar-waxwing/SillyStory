@@ -84,3 +84,5 @@ newStory = newStory.replace(":insertz:", "zItem");
   story.textContent = newStory;
   story.style.visibility = 'visible';
 }
+
+document.querySelector('html').style.backgroundColor = 'red';
