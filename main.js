@@ -19,15 +19,15 @@ let storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. Whe
 
 /*Store the first set of three strings inside an array called insertX.*/
 
-let insertX = ["Willy the Goblin, Big Daddy, Father Christmas"]
+let insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"]
 
 /*Store the second set of three strings inside an array called insertY.*/
 
-let insertY = ["the soup kitchen, Disneyland, the White House"]
+let insertY = ["the soup kitchen", "Disneyland", "the White House"]
 
 /*Store the third set of three strings inside an array called insertZ.*/
 
-let insertZ = ["spontaneously combusted, melted into a puddle on the sidewalk, turned into a slug and crawled away"]
+let insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"]
 
 /* This adds a click event listener to the randomize variable so that when the button it represents is clicked, the result() function is run.*/
 
@@ -49,14 +49,14 @@ function result() {
 /*Next we want to replace the three placeholders in the newStory string — :insertx:, :inserty:, and :insertz: — with the strings stored in xItem, yItem, and zItem. There is a particular string method that will help you here — in each case, make the call to the method equal to newStory, so each time it is called, newStory is made equal to itself, but with substitutions made. So each time the button is pressed, these placeholders are each replaced with a random silly string. As a further hint, the method in question only replaces the first instance of the substring it finds, so you might need to make one of the calls twice.
 */
 
-newStory = newStory.replace(":insertx:", "xItem");
-newStory = newStory.replace(":inserty:", "yItem");
-newStory = newStory.replace(":insertz:", "zItem");
+newStory = newStory.replace(":insertx:", xItem);
+newStory = newStory.replace(":inserty:", yItem);
+newStory = newStory.replace(":insertz:", zItem);
 
 
 /*Inside the first if block, add another string replacement method call to replace the name 'Bob' found in the newStory string with the name variable. In this block we are saying "If a value has been entered into the customName text input, replace Bob in the story with that custom name."*/
 
-  if(customName.value !== " ") {
+  if(customName.value !== "Bob") {
     let name = customName.value;
     newStory = newStory.replace("Bob", name);
   }
@@ -70,11 +70,10 @@ newStory = newStory.replace(":insertz:", "zItem");
     let weight = Math.round(300/14) + " stone";
 
   /*Inside the line that defines the temperature variable, replace 94 with a calculation that converts 94 Fahrenheit into centigrade. Concatenate ' centigrade' onto the end of the result of the overall Math.round() call.*/
-
-    let temperature =  Math.round((94 − 32) × (5/9)) + " centigrade";
+    let temperature = Math.round((94 - 32) * (5/9)) + " centigrade";
 
   /*Just under the two variable definitions, add two more string replacement lines that replace '94 fahrenheit' with the contents of the temperature variable, and '300 pounds' with the contents of the weight variable.*/
-    newStory = newStory.replace("94 farenheit", tempurature);
+    newStory = newStory.replace("94 fahrenheit", temperature);
     newStory = newStory.replace("300 pounds", weight);
 
   }
@@ -84,4 +83,3 @@ newStory = newStory.replace(":insertz:", "zItem");
   story.textContent = newStory;
   story.style.visibility = 'visible';
 }
-
