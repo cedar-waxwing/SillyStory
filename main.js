@@ -56,7 +56,7 @@ newStory = newStory.replace(":insertx:", xItem);
 
 /*Inside the first if block, add another string replacement method call to replace the name 'Bob' found in the newStory string with the name variable. In this block we are saying "If a value has been entered into the customName text input, replace Bob in the story with that custom name."*/
 
-  if(customName.value !== "Bob") {
+  if(customName.value !== "") {
     let name = customName.value;
     newStory = newStory.replace("Bob", name);
   }
